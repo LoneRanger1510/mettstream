@@ -1,6 +1,9 @@
-var myHeading = document.querySelector("header").querySelector("a");
-myHeading.textContent += "0.0.2";
+document.querySelector("header").querySelector("a").textContent += "0.0.3";
 var containerM = document.getElementById("mettstream-container");
+while(containerM.firstChild){
+  containerM.removeChild(containerM.firstChild);
+}
+
 var blockArray = [];
 
 function createBlock(text) {
@@ -11,6 +14,13 @@ function createBlock(text) {
     newText.nodeValue = text;
     containerM.appendChild(newBlock);
 }
+
+// function createBlockMain(textContent, type){
+//   if(type == twitter){
+//     createBlockTwitter(textContent);
+//   }
+//
+// }
 
 function createBlockButton() {
 
