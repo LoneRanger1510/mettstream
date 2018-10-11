@@ -1,6 +1,7 @@
 var myHeading = document.querySelector("header").querySelector("a");
 myHeading.textContent += "0.0.2";
 var containerM = document.getElementById("mettstream-container");
+var blockArray = [];
 
 function createBlock(text) {
     var newBlock = document.createElement("div");
@@ -11,7 +12,7 @@ function createBlock(text) {
     containerM.appendChild(newBlock);
 }
 
-function createBlock() {
+function createBlockButton() {
 
         blockDiv = document.createElement("div");
         blockText = document.createElement("span");
@@ -24,6 +25,9 @@ function createBlock() {
 
     blockDiv.appendChild(blockText);
     containerM.appendChild(blockDiv);
+    blockArray.push(blockDiv);
+    console.log(blockArray);
+
 }
 
 
