@@ -41,7 +41,6 @@ header>div:not([id=logo-header]) {
     text-align: center;
     margin: auto;
     clear: left;
-    font-size: 1.2em;
 }
 
 header>div>a {

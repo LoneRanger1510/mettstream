@@ -35,14 +35,15 @@ function createBlockButton() {
     
     if(containerM.hasChildNodes){
         containerM.insertBefore(blockDiv, containerM.firstChild);
-        console.log("test");
+        //console.log("test");
     }
     else{
         containerM.appendChild(blockDiv);
     }
-
-    blockArray.push(blockDiv);
-    console.log(blockArray);
+    
+    
+    //blockArray.push(blockDiv);
+    //console.log(blockArray);
 
 }
 
