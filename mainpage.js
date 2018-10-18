@@ -1,53 +1,37 @@
-document.querySelector("header").querySelector("a").textContent += "0.0.3";
 var containerM = document.getElementById("mettstream-container");
+containerM.addEventListener("mouseover", removeNewAddedColor);
+
 while (containerM.firstChild) {
     containerM.removeChild(containerM.firstChild);
 }
 
-var blockArray = [];
-
-function createBlock(text) {
-    var newBlock = document.createElement("div");
-    var newText = document.createTextNode("PPPP");
-    newBlock.appendChild(newText);
-    newBlock.setAttribute("class", "js-new-added");
-    newText.nodeValue = text;
-    containerM.appendChild(newBlock);
-}
-
-// function createBlockMain(textContent, type){
-//   if(type == twitter){
-//     createBlockTwitter(textContent);
-//   }
-//
-// }
+var addButton = document.getElementById("new-entry-button").addEventListener("click", createBlockButton);
 
 function createBlockButton() {
-
-    blockDiv = document.createElement("div");
-    console.log("reach?");
-    blockText = document.createElement("span");
-    blockTextNode = document.createTextNode("");
-    blockTextNode.nodeValue = "Das ist ein Test "+Number(Math.round(Math.random()*100));
-    blockDiv.setAttribute("class", "js-new-added");
+    // Div + Text erstellen
+    var blockDiv = document.createElement("div");
+    var blockText = document.createElement("span");
+    var blockTextNode = document.createTextNode("");
+    blockTextNode.nodeValue = "Das ist ein Test " + Number(Math.round(Math.random() * 100));
+    // new-added für hellere Farbe hinzufügen
+    blockDiv.setAttribute("class", "new-added");
     blockText.appendChild(blockTextNode);
     blockDiv.appendChild(blockText);
-    
-    if(containerM.hasChildNodes){
+    // falls schon ein Element vorhanden ist, vor dem ersten Element einsetzen, ansonsten danach
+    if (containerM.firstElementChild) {
+        //containerM.firstElementChild.setAttribute("class", "");
         containerM.insertBefore(blockDiv, containerM.firstChild);
-        //console.log("test");
-    }
-    else{
+    } else {
         containerM.appendChild(blockDiv);
     }
-    
-    
-    //blockArray.push(blockDiv);
-    //console.log(blockArray);
+}
+// Funktion um den hellen Hintergrund zu entfernen
+function removeNewAddedColor(e) {
+    if (e.target && e.target.className != "") {
+        console.log("e " + e.target);
+        e.target.setAttribute("viewed", "");
+        e.target.removeAttribute("class");
+    }
 
 }
 
-
-function createBlockText() {
-
-}
