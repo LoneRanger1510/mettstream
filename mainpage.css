@@ -91,7 +91,15 @@ header>#logo-header {
 }
 
 #new-entry-button {
-    background-color: orangered;
+    background-color: #1da1f2;
+    padding-left: 0.15em;
+    padding-right: 0.15em;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+#new-entry-button2 {
+    background-color: #FF0000;
     padding-left: 0.15em;
     padding-right: 0.15em;
     cursor: pointer;
@@ -102,4 +110,12 @@ header>#logo-header {
     border-top-left-radius: 0em;
     border-bottom-left-radius: 0em;
     margin-left: 0px;
+}
+
+#mettstream-container>[type=twitter]{
+    border-left-color: #1da1f2;
+}
+
+#mettstream-container>[type="youtube"]{
+    border-left-color: #FF0000;
 }
