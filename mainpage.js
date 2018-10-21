@@ -1,32 +1,49 @@
-var myHeading = document.querySelector("header").querySelector("a");
-myHeading.textContent += "0.0.2";
 var containerM = document.getElementById("mettstream-container");
+containerM.addEventListener("mouseover", removeNewAddedColor);
 
-function createBlock(text) {
-    var newBlock = document.createElement("div");
-    var newText = document.createTextNode("PPPP");
-    newBlock.appendChild(newText);
-    newBlock.setAttribute("class","js-new-added");
-    newText.nodeValue = text;
-    containerM.appendChild(newBlock);
+while (containerM.firstChild) {
+    containerM.removeChild(containerM.firstChild);
 }
 
-function createBlock() {
+var addButton = document.getElementById("new-entry-button").addEventListener("click", createBlockButton);
+var addButton2 = document.getElementById("new-entry-button2").addEventListener("click", createBlockButton);
 
-        blockDiv = document.createElement("div");
-        blockText = document.createElement("span");
-        blockTextNode=document.createTextNode("");
-        blockTextNode.nodeValue="Das ist ein Test";
-        blockDiv.setAttribute("class", "js-new-added");
-        blockText.appendChild(blockTextNode);
+function createBlockButton(e) {
+    var newMessage;
+    console.log(e.target.parentNode.id);
+    switch (e.target.parentNode.id){
+        case ("new-entry-button"):
+        newMessage = new Message("twitter", "Twitter-Nachricht erstellt!");
+        break;
+        case ("new-entry-button2"):
+        newMessage = new Message("youtube", "Youtube-Nachricht erstellt!");
+        break;
+    }
 
 
-
-    blockDiv.appendChild(blockText);
-    containerM.appendChild(blockDiv);
+    // Div + Text erstellen
+    /*var blockDiv = document.createElement("div");
+    var blockText = document.createElement("span");
+    var blockTextNode = document.createTextNode("");
+    blockTextNode.nodeValue = "Das ist ein Test " + Number(Math.round(Math.random() * 100));
+    // new-added für hellere Farbe hinzufügen
+    blockDiv.setAttribute("class", "new-added");
+    blockText.appendChild(blockTextNode);
+    blockDiv.appendChild(blockText);*/
+    // falls schon ein Element vorhanden ist, vor dem ersten Element einsetzen, ansonsten danach
+    if (containerM.firstElementChild) {
+        //containerM.firstElementChild.setAttribute("class", "");
+        containerM.insertBefore(newMessage, containerM.firstChild);
+    } else {
+        containerM.appendChild(newMessage);
+    }
 }
-
-
-function createBlockText(){
+// Funktion um den hellen Hintergrund zu entfernen
+function removeNewAddedColor(e) {
+    if (e.target && e.target.className != "") {
+        console.log("e " + e.target);
+        e.target.setAttribute("viewed", "");
+        e.target.removeAttribute("class");
+    }
 
 }

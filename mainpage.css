@@ -16,11 +16,12 @@ header {
     text-align: center;
     margin: auto;
     margin-bottom: 1.4em;
+    min-width: 632px;
 }
 
 a:link,
 a:visited,
-a:hover{
+a:hover {
     text-decoration: none;
     color: #1f2b38;
 }
@@ -33,6 +34,7 @@ header>div {
     padding-top: 0.2em;
     min-width: fit-content;
     border-radius: 3em;
+    box-shadow: 1px 1px 0.3em rgba(0, 0, 0, 0.219);
 }
 
 header>div:not([id=logo-header]) {
@@ -41,7 +43,6 @@ header>div:not([id=logo-header]) {
     text-align: center;
     margin: auto;
     clear: left;
-    font-size: 1.2em;
 }
 
 header>div>a {
@@ -57,7 +58,9 @@ header>#logo-header {
     padding-right: 1em;
     font-weight: 900;
     border-radius: 2.5em;
-
+    margin-right: -5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 #mettstream-container>div {
@@ -65,13 +68,15 @@ header>#logo-header {
     padding: 0.5em 0.95em 0.5em 0.95em;
     border-left: 4px solid;
     border-left-color: #0d72df;
-    margin-top: 0.25em;
+    margin-top: 0.30em;
     font-weight: 500;
     border-radius: 0.3em 0.7em 0.7em 0.3em;
     text-align: center;
     margin-right: auto;
-     margin-left: auto;
+    margin-left: auto;
     max-width: fit-content;
+    box-shadow: 0px 0px 0.3em rgba(0, 0, 0, 0.219);
+
 }
 
 #mettstream-container {
@@ -81,14 +86,36 @@ header>#logo-header {
     overflow: hidden;
 }
 
-#mettstream-container>.js-new-added {
+#mettstream-container>.new-added {
     background-color: #193047;
 }
 
-#new-entry-button{
-    background-color: orangered;
+#new-entry-button {
+    background-color: #1da1f2;
     padding-left: 0.15em;
     padding-right: 0.15em;
-    cursor:pointer;
+    cursor: pointer;
     color: #ffffff;
+}
+
+#new-entry-button2 {
+    background-color: #FF0000;
+    padding-left: 0.15em;
+    padding-right: 0.15em;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.text-header {
+    border-top-left-radius: 0em;
+    border-bottom-left-radius: 0em;
+    margin-left: 0px;
+}
+
+#mettstream-container>[type=twitter]{
+    border-left-color: #1da1f2;
+}
+
+#mettstream-container>[type="youtube"]{
+    border-left-color: #FF0000;
 }
